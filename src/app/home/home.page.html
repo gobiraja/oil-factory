@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Oil Store
+    </ion-title>
+    <ion-button color="danger" fill="clear" slot="end" [routerLink]="['/oilfactory/profile']" [queryParams]="{id: itemArray, price: priceArray}"><ion-icon name="cart-outline"></ion-icon><ion-badge class="ion-margin-right" color="danger" slot="end">{{badgeval}}</ion-badge></ion-button>
+      <ion-avatar slot="end">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-no-padding" size-sm = "6" offset-sm = "3">
+        <ion-searchbar></ion-searchbar>
+        <ion-card *ngFor = "let item of product">
+          <ion-card-header>
+            <ion-img [src]="item.ProductImageUrl"></ion-img>
+            <ion-card-title>
+              {{item.productionName}}
+            </ion-card-title>
+            <ion-card-subtitle>
+              1 லிட்டர் விலை: {{item.productionPrice | currency:'INR':true}}
+            </ion-card-subtitle>
+            <ion-label>
+              <h3><b>நன்மைகள்:</b></h3>
+              <h2>{{item.productionDescription}}</h2>
+            </ion-label>
+            <ion-item class="ion-align-items-center" lines="none">
+              <ion-button (click)="addCart(item, $event)"><ion-icon slote="start" name="add-outline"></ion-icon>Add Cart</ion-button>
+              <ion-button  class="ion-margin-start" color = "danger" fill = "clear" (click)="clearCart()"><ion-icon slote="start" name="close-circle-outline"></ion-icon>Clear</ion-button>
+            </ion-item>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/admin/entry']">
+      <ion-icon name="add-outline" ></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="oilcompany/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Admin data entry</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+        <form>
+       <ion-item>
+         <ion-label position="floating"  >Product Code</ion-label>
+         <ion-input type = "text" required [(ngModel)] ="productionCode" name= "productionCode"></ion-input>
+       </ion-item>
+       <ion-item>
+        <ion-label position="floating">Product Name</ion-label>
+        <ion-input type = "text" required [(ngModel)] ="productionName" name= "productionName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Product Price</ion-label>
+        <ion-input type = "text" required [(ngModel)] ="productionPrice" name= "productionPrice"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        
+        <ion-input type="file" (change)="upload($event)" accept=".png,.jpg" item-end  required><ion-icon name="attach"></ion-icon></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Product Description</ion-label>
+        <ion-textarea type = "text" required [(ngModel)] ="productionDescription" name= "productionDescription"></ion-textarea>
+      </ion-item>
+      <ion-button class = "ion-margin-top" size="block" (click) = onRegister()>Data Entry</ion-button>
+    </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

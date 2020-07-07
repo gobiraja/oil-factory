@@ -1,0 +1,23 @@
+<ion-app>
+  <ion-menu side="start" content-id="main-content">
+    <ion-header>
+      <ion-toolbar translucent color="primary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item >
+          <ion-icon name="book-outline" slot="start"></ion-icon>
+          <ion-button fill="clear" (click)="onBookingOrder($event)" >Booking Order</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          <ion-button fill="clear" (click)="onLogout($event)">LogOut</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id ="main-content"></ion-router-outlet>
+</ion-app>

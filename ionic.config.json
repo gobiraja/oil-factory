@@ -1,0 +1,8 @@
+{
+  "name": "oilfactory",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

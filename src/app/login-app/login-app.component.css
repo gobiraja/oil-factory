@@ -1,0 +1,9 @@
+.login-center{
+    align-items: center;
+}
+
+.spin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
